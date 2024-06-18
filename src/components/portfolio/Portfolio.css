@@ -1,0 +1,222 @@
+.portfolio-container {
+  width: 100%;
+  margin-top: 210px;
+  padding-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+  background: linear-gradient(
+    89deg,
+    #32389b,
+    #2cd8db,
+    #94a5e4,
+    #fd5f81,
+    #283cbe
+  );
+  background-size: 300% 300%;
+  animation: gradient-animation 30s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.main-portfolio-info {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  color: white !important;
+}
+
+.portfolio-grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 400px 400px 400px;
+  gap: 25px;
+  padding-bottom: 200px;
+}
+
+.project1-container,
+.project2-container,
+.project3-container,
+.project4-container,
+.project5-container,
+.project6-container {
+  position: relative;
+  width: 400px;
+  height: 340px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 50px;
+}
+
+.project1-img-container,
+.project2-img-container,
+.project3-img-container,
+.project4-img-container,
+.project5-img-container,
+.project6-img-container {
+  position: relative;
+  width: 400px;
+  height: 340px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 25px;
+  scale: 0.8;
+}
+
+.project1-img-container {
+  background-image: url(./img/gym-site.jpg);
+}
+
+.project2-img-container {
+  background-image: url(./img/art-portfolio1.jpg);
+}
+
+.project3-img-container {
+  background-color: rgb(42, 144, 199);
+}
+
+.project4-img-container {
+  background-image: url(./img/Amazon-img.JPG);
+}
+
+.project5-img-container {
+  background-color: darkorange;
+}
+
+.project6-img-container {
+  background-image: url(./img/portfolio.jpg);
+}
+
+.project-content-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding-top: 40%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  border-radius: 50px;
+  transition: all 0.5s;
+}
+
+.project-content-container a {
+  color: white;
+  font-size: 30px;
+}
+
+.project1-container:hover .project-content-container,
+.project2-container:hover .project-content-container,
+.project3-container:hover .project-content-container,
+.project4-container:hover .project-content-container,
+.project5-container:hover .project-content-container,
+.project6-container:hover .project-content-container {
+  opacity: 1;
+}
+
+.project-skills {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 1280px) {
+  .portfolio-grid-container {
+    grid-template-columns: 400px 400px;
+  }
+  .portfolio-container {
+    margin-top: 210px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .portfolio-grid-container {
+    grid-template-columns: 400px;
+    row-gap: 50px;
+  }
+  .portfolio-info-container {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    top: 100px;
+  }
+  .project1-container {
+    position: sticky;
+    top: 200px;
+    margin-bottom: 260px;
+    z-index: 10;
+  }
+  .project2-container {
+    position: sticky;
+    top: 250px;
+    margin-bottom: 210px;
+    z-index: 11;
+  }
+  .project3-container {
+    position: sticky;
+    top: 300px;
+    margin-bottom: 160px;
+    z-index: 12;
+  }
+  .project4-container {
+    position: sticky;
+    top: 350px;
+    margin-bottom: 110px;
+    z-index: 13;
+  }
+  .project5-container {
+    position: sticky;
+    top: 400px;
+    margin-bottom: 60px;
+    z-index: 14;
+  }
+  .project6-container {
+    position: sticky;
+    top: 450px;
+    z-index: 15;
+  }
+  .portfolio-container {
+    height: 2590px;
+    margin-top: 210px;
+    padding-bottom: 1000px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about-me-container {
+    padding-top: 300px;
+  }
+  .main-info-about-me {
+    font-size: 7vw;
+  }
+  .info-about-me {
+    font-size: 2.5vw;
+  }
+  .main-portfolio-info {
+    font-size: 30px;
+  }
+  /* .portfolio-info {
+    font-size: 15px;
+  } */
+}

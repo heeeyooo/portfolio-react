@@ -1,0 +1,138 @@
+.menu-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  z-index: 9999;
+}
+
+.exit-menu-button {
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 100px;
+  width: 50px;
+  height: 50px;
+  color: black;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  animation: changeExitButton 1s;
+}
+
+@keyframes changeExitButton {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.link-menu-container {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.link-menu-container a {
+  color: black;
+}
+
+.link1 {
+  position: relative;
+  opacity: 0;
+  animation: changeLink 1s 0.1s forwards;
+}
+
+.link2 {
+  position: relative;
+  opacity: 0;
+  animation: changeLink 1s 0.2s forwards;
+}
+
+.link3 {
+  position: relative;
+  opacity: 0;
+  animation: changeLink 1s 0.3s forwards;
+}
+
+.link4 {
+  position: relative;
+  opacity: 0;
+  animation: changeLink 1s 0.4s forwards;
+}
+
+.link5 {
+  position: relative;
+  opacity: 0;
+  animation: changeLink 1s 0.5s forwards;
+}
+
+.link1::after,
+.link2::after,
+.link3::after,
+.link4::after,
+.link5::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: black;
+  transition: width 0.3s;
+}
+
+.link1:hover::after,
+.link2:hover::after,
+.link3:hover::after,
+.link4:hover::after,
+.link5:hover::after {
+  width: 100%;
+}
+
+@keyframes changeLink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.info-icon2 {
+  position: fixed;
+  bottom: 50px;
+  animation: changeFontIcon 1s;
+}
+
+@keyframes changeFontIcon {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.info-icon2 a {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 24px;
+  color: black;
+}

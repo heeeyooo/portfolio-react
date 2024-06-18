@@ -1,0 +1,33 @@
+.style-to-top-btn {
+  display: none;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  background: rgba(200, 200, 200, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: black;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes toTopButton {
+  from {
+    bottom: -50px;
+  }
+  to {
+    bottom: 30px;
+  }
+}
+@keyframes toDownButton {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: -50px;
+  }
+}

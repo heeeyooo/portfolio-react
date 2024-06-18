@@ -1,0 +1,153 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* /* position: absolute; */
+  /* top: 50px;
+  left: 0;
+  right: 0; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* height: 600px; */
+  background: transparent;
+  padding: 100px 0;
+}
+
+input,
+textarea {
+  color: #000;
+}
+
+.info-contact-me {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.input-info {
+  background: rgba(200, 200, 200, 0.2);
+  width: 250px;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.input-subject-info {
+  background: rgba(200, 200, 200, 0.2);
+  width: 550px;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  z-index: 0;
+}
+
+.input-message-info {
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  border: none;
+  padding: 20px;
+  width: 550px;
+  border-radius: 10px;
+  background: rgba(200, 200, 200, 0.2);
+  outline: none;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: rgb(150, 150, 150);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(150, 150, 150);
+}
+
+.form-submit-button {
+  font-family: Comfortaa, serif;
+  font-weight: 100;
+  /* background: black; */
+  font-size: 16px;
+  border: 1px solid black;
+  padding: 20px 60px;
+  cursor: pointer;
+  background: white;
+  color: black !important;
+  /* border-radius: 15px; */
+  transition: all 0.5s;
+}
+
+.form-submit-button:hover {
+  /* background-color: rgb(81, 81, 81); */
+  box-shadow: inset 140px 0 black;
+  /* background-color: black; */
+  color: white !important;
+  /* border: 1px solid black; */
+}
+
+.contact1-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.contact2-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.input-first-name {
+  margin-right: 5px;
+}
+
+.input-second-name {
+  margin-left: 5px;
+}
+
+.subject-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.text-area-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.btn-center {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .info-contact-me {
+    font-size: 30px;
+  }
+  .main-form-container {
+    /* height: 600px; */
+  }
+  .form-container {
+    /* width: 80%; */
+    /* height: 500px; */
+  }
+  .input-info {
+    width: 150px;
+    padding: 15px;
+  }
+  .input-subject-info,
+  .input-message-info {
+    width: 340px;
+    padding: 15px;
+  }
+  .form-submit-button {
+    font-size: 14px;
+    padding: 10px 40px;
+  }
+}

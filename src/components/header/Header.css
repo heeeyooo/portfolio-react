@@ -1,0 +1,98 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(200, 200, 200, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 0 20px;
+  z-index: 60;
+  transition: all 0.3s;
+  border-radius: 50px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo-header {
+  width: 80px;
+}
+
+.new-features {
+  background-color: transparent;
+  border-radius: 50px;
+  transition: all 0.5s;
+}
+
+.new-features:hover {
+  background-color: rgba(149, 149, 149, 0.5);
+}
+
+.new-features:hover .day-night-style {
+  margin-right: 40px;
+}
+
+.day-night-style,
+.song-button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+  transition: all 0.5s;
+}
+
+.burger-button {
+  display: none;
+  color: black;
+}
+
+.nav {
+  display: flex;
+  width: 50%;
+}
+
+.nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav a {
+  font-weight: 100;
+}
+
+@media screen and (max-width: 1100px) {
+  .burger-button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  .nav {
+    display: none;
+    text-align: center;
+  }
+  .nav ul {
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

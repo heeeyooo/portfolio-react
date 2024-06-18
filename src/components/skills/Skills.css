@@ -1,0 +1,127 @@
+.skills-container {
+  background: transparent;
+  width: 100%;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.skills-info {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.skills-grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  grid-template-columns: 200px 200px 200px 200px;
+  margin-bottom: 50px;
+}
+
+.current-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  grid-template-columns: 200px;
+  margin-bottom: 50px;
+}
+
+.skills-container i {
+  font-size: 3rem;
+  transition: transform 0.5s;
+}
+
+.skills-container i:hover {
+  transform: scale(1.5);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.icon-container-current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.skills-progress-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.skills-icon {
+  z-index: 3;
+}
+
+.skills-progress-percent {
+  position: absolute;
+  bottom: 0;
+  display: none;
+  font-size: 2vw;
+  z-index: 2;
+}
+
+.skills-progress-info {
+  font-size: 10px;
+}
+
+@media screen and (max-width: 1100px) {
+  .skills-grid-container {
+    gap: 10px;
+    grid-template-columns: 100px 100px 100px 100px;
+  }
+  .current-grid {
+    gap: 10px;
+    grid-template-columns: 100px;
+  }
+  .icon-container,
+  .icon-container-current {
+    width: 100px;
+    height: 100px;
+  }
+  .skills-container i {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .skills-grid-container {
+    gap: 10px;
+    grid-template-columns: 75px 75px 75px 75px;
+  }
+  .current-grid {
+    gap: 10px;
+    grid-template-columns: 75px;
+  }
+  .icon-container,
+  .icon-container-current {
+    width: 75px;
+    height: 75px;
+  }
+  .skills-container i {
+    font-size: 1.5rem;
+  }
+  .skills-info {
+    font-size: 30px;
+  }
+}
