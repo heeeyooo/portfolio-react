@@ -1,51 +1,78 @@
 import "./Header.css";
 import logo from "./../../img/logo-black.png";
-import logo2 from "./../../img/my-logo-white.png";
 import MobileMenu from "../mobileMenu/MobileMenu";
+// import { useEffect, useState } from "react";
+// import useLocalStorage from "use-local-storage";
+import Resume from "./../../pdf/heeeyooo-resume.pdf";
 
 function Header() {
+  // const [count, setCount] = useLocalStorage("count", 0);
   const openBtn = () => {
     let mobileMenu = document.getElementById("mobile-menu");
     mobileMenu.style.display = "flex";
     document.body.style.overflowY = "hidden";
   };
 
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("js-scroll").style.top = "0";
-    } else {
-      document.getElementById("js-scroll").style.top = "-100px";
-    }
-    prevScrollpos = currentScrollPos;
-  };
+  // let prevScrollpos = window.pageYOffset;
+  // window.onscroll = function () {
+  //   let currentScrollPos = window.pageYOffset;
+  //   if (prevScrollpos > currentScrollPos) {
+  //     document.getElementById("js-scroll").style.top = "0";
+  //   } else {
+  //     document.getElementById("js-scroll").style.top = "-100px";
+  //   }
+  //   prevScrollpos = currentScrollPos;
+  // };
 
-  addEventListener("scroll", () => {
-    let navbar1 = document.getElementById("js-scroll");
-    if (window.pageYOffset <= 0 || window.pageYOffset <= 100) {
-      navbar1.style.top = "0";
-    }
-  });
+  // addEventListener("scroll", () => {
+  //   let navbar1 = document.getElementById("js-scroll");
+  //   if (window.pageYOffset <= 0 || window.pageYOffset <= 100) {
+  //     navbar1.style.top = "0";
+  //   }
+  // });
+
+  // const navLinkEls = document.querySelectorAll(".js-text");
+  // const sectionEls = document.querySelectorAll(".section");
+
+  // let currentSection = "section1";
+  // window.addEventListener("scroll", () => {
+  //   sectionEls.forEach((sectionEl) => {
+  //     if (window.scrollY >= sectionEl.offsetTop) {
+  //       currentSection = sectionEl.id;
+  //     }
+  //   });
+  //   navLinkEls.forEach((navLinksEl) => {
+  //     if (navLinksEl.href.includes(currentSection)) {
+  //       document.querySelector(".active").classList.remove("active");
+  //       navLinksEl.classList.add("active");
+  //     }
+  //   });
+  // });
 
   return (
     <>
       <MobileMenu />
-      {/* <audio
-        src="Bloody-Mary(PagalWorld).mp3"
-        type="audio/mpeg"
-        id="music"
-      ></audio> */}
       <header id="js-scroll" className="header">
         <a href="index.html">
           <img className="logo-header js-logo" src={logo} alt="heeeyooo" />
         </a>
-        {/* <div className="new-features">
-          <button className="day-night-style icon-color" id="day-night-button">
-            <i className="fa-solid fa-moon"></i>
+        {/* <div className="counter-container">
+          <button
+            className="decrease"
+            onClick={() => {
+              setCount(count - 1);
+            }}
+          >
+            <i className="fa-solid fa-minus"></i>
           </button>
-          <button className="song-button icon-color" id="music-button">
-            <i className="fa-solid fa-play"></i>
+          <p>{count}</p>
+          <button
+            className="increase"
+            onClick={() => {
+              setCount(count + 1);
+            }}
+          >
+            <i className="fa-solid fa-plus"></i>
           </button>
         </div> */}
 
@@ -64,13 +91,13 @@ function Header() {
               </a>
             </li>
             <li>
-              <a className="link2 js-text" href="#section3">
+              <a className="link2 js-text" href="#section2">
                 Skills
               </a>
             </li>
             <li>
-              <a className="link3 js-text" href="#section2">
-                Portfolio
+              <a className="link3 js-text" href="#section3">
+                Projects
               </a>
             </li>
             <li>
@@ -79,11 +106,7 @@ function Header() {
               </a>
             </li>
             <li>
-              <a
-                className="link5 js-text"
-                href="pdf/heeeyooo-resume.pdf"
-                target="_blank"
-              >
+              <a className="link5 js-text" href={Resume} target="_blank">
                 Resume
               </a>
             </li>

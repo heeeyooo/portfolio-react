@@ -6,30 +6,35 @@
 }
 
 .skills-info {
-  font-size: 40px;
-  font-weight: bold;
+  font-size: clamp(30px, 5vw, 50px);
+  font-weight: 500;
+  margin: 50px 0;
 }
 
 .skills-grid-container {
   display: grid;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  grid-template-columns: 200px 200px 200px 200px;
-  margin-bottom: 50px;
+  gap: 25px;
+  grid-template-columns: repeat(4, 200px);
+}
+
+.current-info {
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 300;
+  margin: 50px 0;
 }
 
 .current-grid {
   display: grid;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
   grid-template-columns: 200px;
-  margin-bottom: 50px;
 }
 
 .skills-container i {
-  font-size: 3rem;
+  font-size: clamp(24px, 5vw, 60px);
   transition: transform 0.5s;
 }
 
@@ -37,27 +42,16 @@
   transform: scale(1.5);
 }
 
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background: rgba(200, 200, 200, 0.2);
-  border-radius: 10px;
-  cursor: pointer;
-}
-
+.icon-container,
 .icon-container-current {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  background: rgba(200, 200, 200, 0.2);
-  border-radius: 10px;
   width: 200px;
   height: 200px;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -77,22 +71,71 @@
 .skills-progress-percent {
   position: absolute;
   bottom: 0;
+  font-weight: 300;
   display: none;
-  font-size: 2vw;
+  font-size: clamp(12px, 2vw, 24px);
   z-index: 2;
+  margin: 0;
 }
 
 .skills-progress-info {
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 50px 0;
+}
+
+.box-shad {
+  animation: boxAnimation 1s forwards ease-in;
+}
+
+@keyframes boxAnimation {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 0;
+  }
+}
+
+.text-shad {
+  animation: textAnimation 2s 1s infinite linear;
+}
+
+@keyframes textAnimation {
+  0% {
+    text-shadow: 0 0 0 tomato;
+  }
+  50% {
+    text-shadow: 0 0 20px tomato;
+  }
+  100% {
+    text-shadow: 0 0 0 tomato;
+  }
 }
 
 @media screen and (max-width: 1100px) {
   .skills-grid-container {
-    gap: 10px;
-    grid-template-columns: 100px 100px 100px 100px;
+    gap: 20px;
+    grid-template-columns: repeat(4, 150px);
   }
   .current-grid {
-    gap: 10px;
+    gap: 20px;
+    grid-template-columns: 150px;
+  }
+  .icon-container,
+  .icon-container-current {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .skills-grid-container {
+    gap: 15px;
+    grid-template-columns: repeat(4, 100px);
+  }
+  .current-grid {
+    gap: 15px;
     grid-template-columns: 100px;
   }
   .icon-container,
@@ -100,14 +143,12 @@
     width: 100px;
     height: 100px;
   }
-  .skills-container i {
-    font-size: 1.5rem;
-  }
 }
+
 @media screen and (max-width: 600px) {
   .skills-grid-container {
     gap: 10px;
-    grid-template-columns: 75px 75px 75px 75px;
+    grid-template-columns: repeat(4, 75px);
   }
   .current-grid {
     gap: 10px;
@@ -117,11 +158,5 @@
   .icon-container-current {
     width: 75px;
     height: 75px;
-  }
-  .skills-container i {
-    font-size: 1.5rem;
-  }
-  .skills-info {
-    font-size: 30px;
   }
 }

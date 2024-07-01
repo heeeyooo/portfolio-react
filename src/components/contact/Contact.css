@@ -1,15 +1,5 @@
 .form-container {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* /* position: absolute; */
-  /* top: 50px;
-  left: 0;
-  right: 0; */
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* height: 600px; */
+  text-align: center;
   background: transparent;
   padding: 100px 0;
 }
@@ -21,8 +11,9 @@ textarea {
 
 .info-contact-me {
   text-align: center;
-  font-size: 40px;
-  font-weight: bold;
+  font-size: clamp(30px, 5vw, 50px);
+  font-weight: 500;
+  margin: 50px 0;
 }
 
 .input-info {
@@ -32,6 +23,8 @@ textarea {
   border: none;
   border-radius: 10px;
   outline: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .input-subject-info {
@@ -41,7 +34,8 @@ textarea {
   border: none;
   border-radius: 10px;
   outline: none;
-  z-index: 0;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .input-message-info {
@@ -53,6 +47,7 @@ textarea {
   border-radius: 10px;
   background: rgba(200, 200, 200, 0.2);
   outline: none;
+  font-size: 16px;
 }
 
 input::-moz-placeholder,
@@ -66,77 +61,33 @@ textarea::placeholder {
 }
 
 .form-submit-button {
-  font-family: Comfortaa, serif;
-  font-weight: 100;
-  /* background: black; */
+  margin: 50px 0;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 300;
   font-size: 16px;
   border: 1px solid black;
   padding: 20px 60px;
   cursor: pointer;
   background: white;
   color: black !important;
-  /* border-radius: 15px; */
   transition: all 0.5s;
 }
 
 .form-submit-button:hover {
-  /* background-color: rgb(81, 81, 81); */
-  box-shadow: inset 140px 0 black;
-  /* background-color: black; */
+  box-shadow: inset 180px 0 black;
   color: white !important;
-  /* border: 1px solid black; */
 }
 
-.contact1-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 10px;
-}
-
+.contact1-container,
 .contact2-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-.input-first-name {
-  margin-right: 5px;
-}
-
-.input-second-name {
-  margin-left: 5px;
-}
-
-.subject-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.text-area-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-
-.btn-center {
-  text-align: center;
-}
-
-@media screen and (max-width: 600px) {
-  .info-contact-me {
-    font-size: 30px;
-  }
-  .main-form-container {
-    /* height: 600px; */
-  }
-  .form-container {
-    /* width: 80%; */
-    /* height: 500px; */
-  }
+@media screen and (max-width: 650px) {
   .input-info {
     width: 150px;
     padding: 15px;

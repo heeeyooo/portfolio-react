@@ -30,7 +30,7 @@ function MobileMenu() {
           Skills
         </a>
         <a onClick={closeMenu} className="link3 js-text" href="#section3">
-          Portfolio
+          Projects
         </a>
         <a onClick={closeMenu} className="link4 js-text" href="#section4">
           Contact me
@@ -40,7 +40,7 @@ function MobileMenu() {
         </a>
       </div>
 
-      <div className="info-icon2">
+      <div className="menu-socials-icons">
         <a
           className="icon-color"
           href="https://github.com/heeeyooo"

@@ -11,15 +11,16 @@ import logo from "./img/logo-black.png";
 import logo2 from "./img/my-logo-white.png";
 import ReactSwitch from "react-switch";
 import ToTopBtn from "./components/toTopBtn/ToTopBtn";
+import useLocalStorage from "use-local-storage";
+import Projects from "./components/projects/Projects";
 
 function App() {
-  // const [count, setCount] = useState(0);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useLocalStorage("", "light");
   const toggleTheme = () => {
     setTheme((current) => (current === "light" ? "dark" : "light"));
     changeLogo();
   };
-
+  // ISSUE WITH ICON DON'T KNOW HOW TO FIGURE IT OUT
   function changeLogo() {
     const mainLogo = document.querySelectorAll(".js-logo");
     if (theme === "light") {
@@ -42,41 +43,32 @@ function App() {
             checked={theme === "dark"}
             onColor="#000"
             offColor="#fff"
-            offHandleColor="#888"
-            onHandleColor="#888"
+            offHandleColor="#000"
+            onHandleColor="#fff"
             checkedIcon={
               <i
-                style={{ marginTop: 6, marginLeft: 6, color: "white" }}
+                style={{ marginTop: 6, marginLeft: 7, color: "white" }}
                 className="fa-solid fa-sun"
               ></i>
             }
             uncheckedIcon={
               <span className="moon">
                 <i
-                  style={{ marginTop: 6, marginLeft: 6, color: "black" }}
+                  style={{ marginTop: 6, marginLeft: 7, color: "black" }}
                   className="fa-solid fa-moon"
                 ></i>
               </span>
             }
           />
         </div>
-        <ToTopBtn />
         <Header />
         <About />
         <Skills />
         <Portfolio />
+        {/* <Projects /> */}
         <Contact />
-        {/* <p>{count}</p>
-      <button
-        className="increment-btn"
-        onClick={() => {
-          setCount(count + 1);
-        }}
-      >
-        Increase
-      </button> */}
-
         <Footer />
+        <ToTopBtn />
       </div>
     </ThemeContext.Provider>
   );

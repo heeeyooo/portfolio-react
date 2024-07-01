@@ -31,7 +31,14 @@ function Skills() {
         document.getElementById("demo1").style.display = "block";
         document.getElementById("demo1").innerHTML = width * 1 + "%";
       }
+      console.log(width);
+      if (width === 100) {
+        elem.classList.add("box-shad");
+        document.getElementById("second").classList.add("text-shad");
+      }
     }
+    elem.classList.remove("box-shad");
+    document.getElementById("second").classList.remove("text-shad");
   }
   function move2(percent, color) {
     let elem = document.getElementById("myBar2");
@@ -130,11 +137,28 @@ function Skills() {
     }
   }
 
+  function move8(percent, color) {
+    let elem = document.getElementById("myBar8");
+    let width = 0;
+    let id = setInterval(frame, 10);
+    function frame() {
+      if (width >= percent) {
+        clearInterval(id);
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.style.backgroundColor = color;
+        document.getElementById("demo8").style.display = "block";
+        document.getElementById("demo8").innerHTML = width * 1 + "%";
+      }
+    }
+  }
+
   return (
-    <div className="skills-container" id="section2">
-      <p className="skills-info">Skills</p>
+    <div className="skills-container section" id="section2">
+      <h3 className="skills-info">Skills</h3>
       <div className="skills-grid-container">
-        <div className="icon-container js-skills1">
+        <div className="icon-container">
           <div className="skills-progress-container" id="myBar"></div>
           <i
             onClick={() => move(75, "green")}
@@ -142,47 +166,48 @@ function Skills() {
           ></i>
           <p className="skills-progress-percent" id="demo"></p>
         </div>
-        <div className="icon-container js-skills2">
+        <div className="icon-container">
           <div className="skills-progress-container" id="myBar1"></div>
           <i
-            onClick={() => move1(65, "skyblue")}
-            className="fa-brands fa-css3-alt skills-icon"
+            id="second"
+            onClick={() => move1(100, "tomato")}
+            className="fa-brands fa-html5 skills-icon"
           ></i>
           <p className="skills-progress-percent" id="demo1"></p>
         </div>
-        <div className="icon-container js-skills3">
+        <div className="icon-container">
           <div className="skills-progress-container" id="myBar2"></div>
           <i
-            onClick={() => move2(92, "tomato")}
-            className="fa-brands fa-html5 skills-icon"
+            onClick={() => move2(65, "skyblue")}
+            className="fa-brands fa-css3-alt skills-icon"
           ></i>
           <p className="skills-progress-percent" id="demo2"></p>
         </div>
-        <div className="icon-container js-skills4">
+        <div className="icon-container">
           <div className="skills-progress-container" id="myBar3"></div>
           <i
-            onClick={() => move3(52, "orange")}
-            className="fa-brands fa-git-alt skills-icon"
+            onClick={() => move3(87, "gold")}
+            className="fa-brands fa-square-js skills-icon"
           ></i>
           <p className="skills-progress-percent" id="demo3"></p>
         </div>
-        <div className="icon-container js-skills5">
+        <div className="icon-container">
           <div className="skills-progress-container" id="myBar4"></div>
           <i
             onClick={() => move4(52, "orange")}
-            className="fa-brands fa-github skills-icon"
+            className="fa-brands fa-git-alt skills-icon"
           ></i>
           <p className="skills-progress-percent" id="demo4"></p>
         </div>
-        <div className="icon-container js-skills6">
+        <div className="icon-container">
           <div className="skills-progress-container" id="myBar5"></div>
           <i
-            onClick={() => move5(87, "gold")}
-            className="fa-brands fa-square-js skills-icon"
+            onClick={() => move5(52, "orange")}
+            className="fa-brands fa-github skills-icon"
           ></i>
           <p className="skills-progress-percent" id="demo5"></p>
         </div>
-        <div className="icon-container js-skills7">
+        <div className="icon-container">
           <div className="skills-progress-container" id="myBar6"></div>
           <i
             onClick={() => move6(87, "fuchsia")}
@@ -190,13 +215,21 @@ function Skills() {
           ></i>
           <p className="skills-progress-percent" id="demo6"></p>
         </div>
+        <div className="icon-container">
+          <div className="skills-progress-container" id="myBar8"></div>
+          <i
+            onClick={() => move8(50, "thistle")}
+            className="fa-brands fa-figma skills-icon"
+          ></i>
+          <p className="skills-progress-percent" id="demo8"></p>
+        </div>
       </div>
-      <p>Currently learning</p>
+      <h4 className="current-info">Currently learning</h4>
       <div className="current-grid">
-        <div className="icon-container-current js-skills8">
+        <div className="icon-container-current">
           <div className="skills-progress-container" id="myBar7"></div>
           <i
-            onClick={() => move7(1, "turquoise")}
+            onClick={() => move7(20, "turquoise")}
             className="fa-brands fa-react skills-icon"
           ></i>
           <p className="skills-progress-percent" id="demo7"></p>

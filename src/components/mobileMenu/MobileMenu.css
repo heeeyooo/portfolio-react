@@ -8,28 +8,23 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: white;
+  background: #fff;
   z-index: 9999;
 }
 
 .exit-menu-button {
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   top: 100px;
-  width: 50px;
-  height: 50px;
-  color: black;
-  border-radius: 50%;
+  color: #000;
   border: none;
-  background-color: transparent;
+  background: transparent;
   cursor: pointer;
-  font-size: 24px;
-  animation: changeExitButton 1s;
+  font-size: 30px;
+  padding: 0;
+  animation: translateExitButton 1s;
 }
 
-@keyframes changeExitButton {
+@keyframes translateExitButton {
   from {
     opacity: 0;
     transform: translateY(-100px);
@@ -40,47 +35,42 @@
   }
 }
 .link-menu-container {
-  height: 200px;
+  height: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   font-size: 30px;
-  line-height: 1.5;
-}
-
-.link-menu-container a {
-  color: black;
 }
 
 .link1 {
   position: relative;
   opacity: 0;
-  animation: changeLink 1s 0.1s forwards;
+  animation: underlineWidth 1s 0.1s forwards;
 }
 
 .link2 {
   position: relative;
   opacity: 0;
-  animation: changeLink 1s 0.2s forwards;
+  animation: underlineWidth 1s 0.2s forwards;
 }
 
 .link3 {
   position: relative;
   opacity: 0;
-  animation: changeLink 1s 0.3s forwards;
+  animation: underlineWidth 1s 0.3s forwards;
 }
 
 .link4 {
   position: relative;
   opacity: 0;
-  animation: changeLink 1s 0.4s forwards;
+  animation: underlineWidth 1s 0.4s forwards;
 }
 
 .link5 {
   position: relative;
   opacity: 0;
-  animation: changeLink 1s 0.5s forwards;
+  animation: underlineWidth 1s 0.5s forwards;
 }
 
 .link1::after,
@@ -106,7 +96,7 @@
   width: 100%;
 }
 
-@keyframes changeLink {
+@keyframes underlineWidth {
   from {
     opacity: 0;
   }
@@ -114,10 +104,15 @@
     opacity: 1;
   }
 }
-.info-icon2 {
+.menu-socials-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   position: fixed;
   bottom: 50px;
   animation: changeFontIcon 1s;
+  font-size: 24px;
 }
 
 @keyframes changeFontIcon {
@@ -129,10 +124,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-.info-icon2 a {
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 24px;
-  color: black;
 }

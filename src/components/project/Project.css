@@ -1,0 +1,55 @@
+/* .project1-container {
+  position: relative;
+  width: 400px;
+  height: 340px;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 50px;
+}
+
+.project1-img-container {
+  position: relative;
+  width: 400px;
+  height: 340px;
+  border-radius: inherit;
+  scale: 0.8;
+  overflow: hidden;
+}
+
+.img-title {
+  width: 400px;
+}
+
+.project-content-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.project-content-container a {
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+}
+
+.project1-container:hover .project-content-container {
+  opacity: 1;
+}
+
+.project-skills {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  bottom: 25px;
+  color: white;
+  font-size: 24px;
+} */

@@ -4,16 +4,32 @@ import Resume from "./../../pdf/heeeyooo-resume.pdf";
 function About() {
   function changeChars() {
     let chars = document.querySelectorAll(".main-info-about-me span");
-    chars.forEach((char) => {
-      char.classList.add("active");
+    let mainInfo = document.querySelector(".main-info-about-me");
+
+    chars.forEach((char, index) => {
+      setTimeout(() => {
+        char.classList.add("active");
+        // mainInfo.classList.add("gradient");
+        // char.classList.replace("active", "to-reveal");
+      }, index * 100);
+      // setInterval(() => {
+      //   char.classList.remove("active");
+      // }, 4000);
     });
   }
+
   addEventListener("animationstart", () => {
     changeChars();
   });
+  // function changeBackground() {
+  //   let mainInfo = document.querySelector(".main-info-about-me");
+  //   mainInfo.classList.add("gradient");
+  // }
+  // changeBackground();
+
   return (
-    <div className="about-me-container" id="section1">
-      <p className="main-info-about-me">
+    <div className="about-me-container section" id="section1">
+      <h1 className="main-info-about-me">
         <span>H</span>
         <span>i</span>
         <span>,</span>
@@ -51,24 +67,21 @@ function About() {
         <span>p</span>
         <span>e</span>
         <span>r</span>
-      </p>
+      </h1>
       <p className="info-about-me">
-        I spend my time as a front end developer
+        I create high quality minimalistic projects that will charm the
         <br />
-        <span className="opac1">
-          I like to integrate new interesting ideas for websites and
-          applications
-        </span>
-        <br />
-        <span className="opac2">I'm always excited to learn something new</span>
-        <br />
-        <span className="opac3">In my free time I work out at the gym</span>
+        viewer with their transitions and ease of use. Currently looking for
+        <br />a job and learning by myself. Gym enjoyer
+        {/* I like to integrate new interesting ideas for websites and applications
+        I'm always excited to learn something new
+        In my free time I work out at the gym */}
       </p>
-      <a href={Resume} download="">
-        <button className="resume-button">Download CV</button>
+      <a className="resume-button" href={Resume} download="">
+        Download CV
       </a>
-      <a href="#section2">
-        <button className="show-more-btn">Show more</button>
+      <a className="show-more-btn" href="#section2">
+        Show more
       </a>
     </div>
   );

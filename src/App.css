@@ -25,18 +25,11 @@ html {
 }
 
 .switch {
-  background-color: black;
-  padding: 20px;
-  margin: 0;
-  transform: rotate(-90deg);
   position: fixed;
   z-index: 61;
-  top: 150px;
-  right: -20px;
-  background: rgba(200, 200, 200, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border-radius: 25px 25px 0 0;
+  top: 36px;
+  left: 25%;
+  transform: translateX(-50%);
 }
 
 #light {
@@ -68,6 +61,14 @@ html {
 #dark input,
 #dark textarea {
   color: #fff;
+}
+
+#dark .main-info-about-me span {
+  background-color: black;
+}
+
+#light .main-info-about-me span {
+  background-color: white;
 }
 
 .style-to-top-btn {
@@ -153,4 +154,11 @@ html {
 .increment-btn:active {
   background-color: black;
   color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .switch {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

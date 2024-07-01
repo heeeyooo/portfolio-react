@@ -10,7 +10,7 @@
   background: rgba(200, 200, 200, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  padding: 0 20px;
+  padding: 0 25px;
   z-index: 60;
   transition: all 0.3s;
   border-radius: 50px;
@@ -19,39 +19,34 @@
 
 .logo-header {
   width: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.new-features {
-  background-color: transparent;
-  border-radius: 50px;
-  transition: all 0.5s;
+/* .counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.new-features:hover {
-  background-color: rgba(149, 149, 149, 0.5);
-}
-
-.new-features:hover .day-night-style {
-  margin-right: 40px;
-}
-
-.day-night-style,
-.song-button {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  font-size: 24px;
+.increase,
+.decrease {
+  background: transparent;
   border: none;
   cursor: pointer;
   color: black;
-  background-color: transparent;
-  transition: all 0.5s;
-}
+} */
 
 .burger-button {
   display: none;
   color: black;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  padding: 0;
 }
 
 .nav {
@@ -60,11 +55,17 @@
 }
 
 .nav ul {
-  width: 100%;
-  list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  font-size: 16px;
+  font-weight: 300;
 }
 
 a {
@@ -72,27 +73,12 @@ a {
   text-decoration: none;
 }
 
-.nav a {
-  font-weight: 100;
-}
-
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 900px) {
   .burger-button {
-    display: block;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
+    display: inline;
   }
+
   .nav {
     display: none;
-    text-align: center;
-  }
-  .nav ul {
-    margin-top: auto;
-    margin-bottom: auto;
-    flex-direction: column;
-    padding-left: 0;
-    padding-right: 0;
   }
 }

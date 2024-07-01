@@ -14,7 +14,7 @@ function Footer() {
     }
   }, 2000);
   return (
-    <footer className="footer-section js-footer">
+    <footer className="footer js-footer">
       <a className="link-logo-footer" href="index.html">
         <img className="logo-footer js-logo" src={logo} alt="" />
       </a>
@@ -68,6 +68,7 @@ function Footer() {
           <i className="fa-brands fa-linkedin"></i>
         </a>
       </div>
+      <p className="copyright">© Stepan Dordiai 2024</p>
     </footer>
   );
 }
