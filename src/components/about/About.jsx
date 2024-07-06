@@ -67,9 +67,17 @@ function About() {
         I'm always excited to learn something new
         In my free time I work out at the gym */}
       </p>
-      <a className="resume-button" href={Resume} download={true}>
-        Download CV
-      </a>
+      <div className="btn-container">
+        <a
+          className="resume-button"
+          href={Resume}
+          target="_blank"
+          download={false}
+        >
+          Download CV
+        </a>
+      </div>
+
       {/* <a className="show-more-btn" href="#section2">
         Show more
       </a> */}

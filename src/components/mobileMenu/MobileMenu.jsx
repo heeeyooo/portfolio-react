@@ -109,7 +109,7 @@ function MobileMenu() {
           >
             Contact me
           </a>
-          <a className="link5 js-text" href={Resume}>
+          <a className="link5 js-text" href={Resume} target="_blank">
             Resume
           </a>
         </div>

@@ -35,7 +35,15 @@ function ToTopBtn() {
       let arrowUp = document.getElementById("arrow-up");
       progressValue.style.animation = "opacDown forwards";
       arrowUp.style.animation = "opacUp forwards";
-    }, 3000);
+    }, 2000);
+  });
+  addEventListener("touchend", () => {
+    setTimeout(() => {
+      let progressValue = document.getElementById("progress-value");
+      let arrowUp = document.getElementById("arrow-up");
+      progressValue.style.animation = "opacDown forwards";
+      arrowUp.style.animation = "opacUp forwards";
+    }, 2000);
   });
 
   window.onscroll = scrollPercentage;
