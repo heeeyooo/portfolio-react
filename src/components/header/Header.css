@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(200, 200, 200, 0.2);
+  background: var(--main-background);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 0 25px;
@@ -18,31 +18,16 @@
 }
 
 .logo-header {
-  width: 80px;
   position: absolute;
+  width: 70px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-/* .counter-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.increase,
-.decrease {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: black;
-} */
-
 .burger-button {
   display: none;
-  color: black;
-  background-color: transparent;
+  color: var(--text-color);
+  background: transparent;
   border: none;
   cursor: pointer;
   font-size: 30px;
@@ -66,11 +51,14 @@
 .nav a {
   font-size: 16px;
   font-weight: 300;
+  color: var(--link-color);
+  text-decoration: none;
+  opacity: 0;
+  transition: all 0.2s;
 }
 
-a {
-  color: black;
-  text-decoration: none;
+a:hover {
+  color: var(--text-color);
 }
 
 @media screen and (max-width: 900px) {

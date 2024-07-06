@@ -31,14 +31,7 @@ function Skills() {
         document.getElementById("demo1").style.display = "block";
         document.getElementById("demo1").innerHTML = width * 1 + "%";
       }
-      console.log(width);
-      if (width === 100) {
-        elem.classList.add("box-shad");
-        document.getElementById("second").classList.add("text-shad");
-      }
     }
-    elem.classList.remove("box-shad");
-    document.getElementById("second").classList.remove("text-shad");
   }
   function move2(percent, color) {
     let elem = document.getElementById("myBar2");
@@ -158,6 +151,7 @@ function Skills() {
     <div className="skills-container section" id="section2">
       <h3 className="skills-info">Skills</h3>
       <div className="skills-grid-container">
+        {/* PYTHON */}
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar"></div>
           <i
@@ -166,15 +160,16 @@ function Skills() {
           ></i>
           <p className="skills-progress-percent" id="demo"></p>
         </div>
+        {/* HTML */}
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar1"></div>
           <i
-            id="second"
             onClick={() => move1(100, "tomato")}
             className="fa-brands fa-html5 skills-icon"
           ></i>
           <p className="skills-progress-percent" id="demo1"></p>
         </div>
+        {/* CSS */}
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar2"></div>
           <i
@@ -183,6 +178,7 @@ function Skills() {
           ></i>
           <p className="skills-progress-percent" id="demo2"></p>
         </div>
+        {/* JS */}
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar3"></div>
           <i
@@ -191,6 +187,7 @@ function Skills() {
           ></i>
           <p className="skills-progress-percent" id="demo3"></p>
         </div>
+        {/* GIT */}
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar4"></div>
           <i
@@ -199,6 +196,7 @@ function Skills() {
           ></i>
           <p className="skills-progress-percent" id="demo4"></p>
         </div>
+        {/* GITHUB */}
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar5"></div>
           <i
@@ -207,6 +205,7 @@ function Skills() {
           ></i>
           <p className="skills-progress-percent" id="demo5"></p>
         </div>
+        {/* SASS */}
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar6"></div>
           <i
@@ -215,6 +214,7 @@ function Skills() {
           ></i>
           <p className="skills-progress-percent" id="demo6"></p>
         </div>
+        {/* FIGMA */}
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar8"></div>
           <i
@@ -226,6 +226,7 @@ function Skills() {
       </div>
       <h4 className="current-info">Currently learning</h4>
       <div className="current-grid">
+        {/* REACT */}
         <div className="icon-container-current">
           <div className="skills-progress-container" id="myBar7"></div>
           <i

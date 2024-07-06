@@ -3,6 +3,7 @@
   width: 100%;
   padding: 100px 0;
   text-align: center;
+  color: var(--text-color);
 }
 
 .skills-info {
@@ -50,7 +51,7 @@
   position: relative;
   width: 200px;
   height: 200px;
-  background: rgba(200, 200, 200, 0.2);
+  background: var(--main-background);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -60,7 +61,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  border-radius: 10px;
+  border-radius: inherit;
   z-index: 2;
 }
 
@@ -82,35 +83,6 @@
   font-size: 12px;
   font-weight: 300;
   margin: 50px 0;
-}
-
-.box-shad {
-  animation: boxAnimation 1s forwards ease-in;
-}
-
-@keyframes boxAnimation {
-  from {
-    scale: 1;
-  }
-  to {
-    scale: 0;
-  }
-}
-
-.text-shad {
-  animation: textAnimation 2s 1s infinite linear;
-}
-
-@keyframes textAnimation {
-  0% {
-    text-shadow: 0 0 0 tomato;
-  }
-  50% {
-    text-shadow: 0 0 20px tomato;
-  }
-  100% {
-    text-shadow: 0 0 0 tomato;
-  }
 }
 
 @media screen and (max-width: 1100px) {

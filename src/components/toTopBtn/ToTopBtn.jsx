@@ -1,35 +1,52 @@
+import { useEffect } from "react";
 import "./ToTopBtn.css";
 
 function ToTopBtn() {
-  // Get the button:
-
-  // When the user scrolls down 20px from the top of the document, show the button
-  function scrollFunction() {
-    const mybutton = document.getElementById("toTopBtn");
-    if (
-      document.body.scrollTop > 1000 ||
-      document.documentElement.scrollTop > 1000
-    ) {
-      mybutton.style.display = "block";
-      mybutton.style.animation = "toTopButton 0.5s forwards";
-    } else {
-      mybutton.style.animation = "toDownButton 0.5s forwards";
-    }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
   function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
-  addEventListener("scroll", () => {
-    scrollFunction();
+  let scrollPercentage = () => {
+    let myBtn = document.querySelector("#progress");
+    let progressValue = document.getElementById("progress-value");
+    let arrowUp = document.getElementById("arrow-up");
+    let pos = document.documentElement.scrollTop;
+    let calcHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    let scrollValue = Math.round((pos * 100) / calcHeight);
+    // console.log(scrollValue);
+    // myBtn.style.background = `conic-gradient(rgba(255, 255, 255, 0.5) ${scrollValue}%, var(--main-background) ${scrollValue}%)`;
+    progressValue.textContent = scrollValue + "%";
+    progressValue.style.animation = "opacUp forwards";
+    arrowUp.style.animation = "opacDown forwards";
+    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+      myBtn.style.display = "grid";
+      myBtn.style.animation = "toTopButton 0.3s forwards";
+    } else {
+      myBtn.style.animation = "toDownButton 0.3s forwards";
+    }
+  };
+
+  addEventListener("scrollend", () => {
+    setTimeout(() => {
+      let progressValue = document.getElementById("progress-value");
+      let arrowUp = document.getElementById("arrow-up");
+      progressValue.style.animation = "opacDown forwards";
+      arrowUp.style.animation = "opacUp forwards";
+    }, 3000);
   });
+
+  window.onscroll = scrollPercentage;
+
   return (
-    <button id="toTopBtn" className="style-to-top-btn" onClick={topFunction}>
-      <i className="fa-solid fa-arrow-up icon-color"></i>
-    </button>
+    <>
+      <button id="progress" onClick={topFunction}>
+        <i id="arrow-up" class="fa-solid fa-arrow-up"></i>
+        <span id="progress-value"></span>
+      </button>
+    </>
   );
 }
 

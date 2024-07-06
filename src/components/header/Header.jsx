@@ -1,12 +1,9 @@
-import "./Header.css";
-import logo from "./../../img/logo-black.png";
 import MobileMenu from "../mobileMenu/MobileMenu";
-// import { useEffect, useState } from "react";
-// import useLocalStorage from "use-local-storage";
+import "./Header.css";
+import logo from "./../../img/Logo-black.svg";
 import Resume from "./../../pdf/heeeyooo-resume.pdf";
 
 function Header() {
-  // const [count, setCount] = useLocalStorage("count", 0);
   const openBtn = () => {
     let mobileMenu = document.getElementById("mobile-menu");
     mobileMenu.style.display = "flex";
@@ -18,36 +15,78 @@ function Header() {
   //   let currentScrollPos = window.pageYOffset;
   //   if (prevScrollpos > currentScrollPos) {
   //     document.getElementById("js-scroll").style.top = "0";
+  //     document.getElementById("js-scroll").style.boxShadow =
+  //       "0 8px 15px rgba(0, 0, 0, 0.1)";
   //   } else {
   //     document.getElementById("js-scroll").style.top = "-100px";
+  //     document.getElementById("js-scroll").style.boxShadow = "none";
   //   }
   //   prevScrollpos = currentScrollPos;
   // };
 
   // addEventListener("scroll", () => {
-  //   let navbar1 = document.getElementById("js-scroll");
   //   if (window.pageYOffset <= 0 || window.pageYOffset <= 100) {
-  //     navbar1.style.top = "0";
+  //     document.getElementById("js-scroll").style.top = "0";
+  //     document.getElementById("js-scroll").style.boxShadow =
+  //       "0 8px 15px rgba(0, 0, 0, 0.1)";
   //   }
   // });
 
-  // const navLinkEls = document.querySelectorAll(".js-text");
-  // const sectionEls = document.querySelectorAll(".section");
+  addEventListener("scroll", () => {
+    const links1 = document.querySelectorAll(".head-link1");
+    const links2 = document.querySelectorAll(".head-link2");
+    const links3 = document.querySelectorAll(".head-link3");
+    const links4 = document.querySelectorAll(".head-link4");
 
-  // let currentSection = "section1";
-  // window.addEventListener("scroll", () => {
-  //   sectionEls.forEach((sectionEl) => {
-  //     if (window.scrollY >= sectionEl.offsetTop) {
-  //       currentSection = sectionEl.id;
-  //     }
-  //   });
-  //   navLinkEls.forEach((navLinksEl) => {
-  //     if (navLinksEl.href.includes(currentSection)) {
-  //       document.querySelector(".active").classList.remove("active");
-  //       navLinksEl.classList.add("active");
-  //     }
-  //   });
-  // });
+    if (window.scrollY < 700) {
+      links1.forEach((link) => {
+        link.classList.add("active-link");
+      });
+      links2.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+      links3.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+    } else if (window.scrollY < 1900) {
+      links1.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+      links2.forEach((link) => {
+        link.classList.add("active-link");
+      });
+      links3.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+    } else if (window.scrollY < 3000) {
+      links3.forEach((link) => {
+        link.classList.add("active-link");
+      });
+      links2.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+
+      links4.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+      links1.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+    } else if (window.scrollY > 3000) {
+      links4.forEach((link) => {
+        link.classList.add("active-link");
+      });
+      links2.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+      links3.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+      links1.forEach((link) => {
+        link.classList.remove("active-link");
+      });
+    }
+  });
 
   return (
     <>
@@ -56,26 +95,6 @@ function Header() {
         <a href="index.html">
           <img className="logo-header js-logo" src={logo} alt="heeeyooo" />
         </a>
-        {/* <div className="counter-container">
-          <button
-            className="decrease"
-            onClick={() => {
-              setCount(count - 1);
-            }}
-          >
-            <i className="fa-solid fa-minus"></i>
-          </button>
-          <p>{count}</p>
-          <button
-            className="increase"
-            onClick={() => {
-              setCount(count + 1);
-            }}
-          >
-            <i className="fa-solid fa-plus"></i>
-          </button>
-        </div> */}
-
         <button
           onClick={openBtn}
           id="openBtn"
@@ -86,22 +105,25 @@ function Header() {
         <nav className="nav">
           <ul>
             <li>
-              <a className="link1 js-text" href="#section1">
+              <a
+                className="link1 js-text head-link1 active-link"
+                href="#section1"
+              >
                 Home
               </a>
             </li>
             <li>
-              <a className="link2 js-text" href="#section2">
+              <a className="link2 js-text head-link2" href="#section2">
                 Skills
               </a>
             </li>
             <li>
-              <a className="link3 js-text" href="#section3">
+              <a className="link3 js-text head-link3" href="#section3">
                 Projects
               </a>
             </li>
             <li>
-              <a className="link4 js-text" href="#section4">
+              <a className="link4 js-text head-link4" href="#section4">
                 Contact me
               </a>
             </li>

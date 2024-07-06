@@ -1,15 +1,15 @@
 import "./Contact.css";
 
 function Contact() {
-  function changeColor() {
+  function wrongEmail() {
     let inp = document.getElementById("email");
 
     if (inp.value.includes("@")) {
-      inp.style.backgroundColor = "rgba(0, 255, 0, 0.2)";
+      inp.style.background = " rgba(0, 255, 0, 0.5)";
     } else if (!inp.value) {
-      inp.style.backgroundColor = "rgba(200, 200, 200, 0.2)";
+      inp.style.background = "var(--main-background)";
     } else {
-      inp.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
+      inp.style.background = "rgba(255, 0, 0, 0.5)";
     }
   }
   return (
@@ -26,14 +26,14 @@ function Contact() {
             type="text"
             id="first-name"
             name="First Name"
-            placeholder="First Name *"
+            placeholder="First Name"
           />
           <input
             className="input-info"
             type="text"
             id="last-name"
             name="Last Name"
-            placeholder="Last Name *"
+            placeholder="Last Name"
           />
         </div>
         <div className="contact2-container">
@@ -43,14 +43,14 @@ function Contact() {
             id="email"
             name="Email"
             placeholder="Email *"
-            onInput={() => changeColor()}
+            onInput={() => wrongEmail()}
           />
           <input
             className="input-info"
             type="tel"
             id="phone-number"
             name="Phone Number"
-            placeholder="Phone Number *"
+            placeholder="Phone Number"
           />
         </div>
         <input
@@ -65,7 +65,7 @@ function Contact() {
           className="input-message-info"
           name="Message"
           id="message"
-          placeholder="Message *"
+          placeholder="Message"
           minLength="10"
           rows="5"
         ></textarea>

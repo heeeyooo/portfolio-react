@@ -1,31 +1,21 @@
 import "./About.css";
+import "./../../colors.css";
 import Resume from "./../../pdf/heeeyooo-resume.pdf";
 
 function About() {
   function changeChars() {
     let chars = document.querySelectorAll(".main-info-about-me span");
-    let mainInfo = document.querySelector(".main-info-about-me");
 
     chars.forEach((char, index) => {
       setTimeout(() => {
         char.classList.add("active");
-        // mainInfo.classList.add("gradient");
-        // char.classList.replace("active", "to-reveal");
       }, index * 100);
-      // setInterval(() => {
-      //   char.classList.remove("active");
-      // }, 4000);
     });
   }
 
   addEventListener("animationstart", () => {
     changeChars();
   });
-  // function changeBackground() {
-  //   let mainInfo = document.querySelector(".main-info-about-me");
-  //   mainInfo.classList.add("gradient");
-  // }
-  // changeBackground();
 
   return (
     <div className="about-me-container section" id="section1">
@@ -77,12 +67,12 @@ function About() {
         I'm always excited to learn something new
         In my free time I work out at the gym */}
       </p>
-      <a className="resume-button" href={Resume} download="">
+      <a className="resume-button" href={Resume} download={true}>
         Download CV
       </a>
-      <a className="show-more-btn" href="#section2">
+      {/* <a className="show-more-btn" href="#section2">
         Show more
-      </a>
+      </a> */}
     </div>
   );
 }

@@ -7,6 +7,7 @@ function Portfolio() {
     <div className="portfolio-container section" id="section3">
       <h3 className="main-portfolio-info">Projects</h3>
       <div className="portfolio-grid-container">
+        {/* PROJECT */}
         <div className="project1-container">
           <div className="project1-img-container">
             <img className="img-title" src={img1} alt="" />
@@ -22,6 +23,7 @@ function Portfolio() {
             </div>
           </div>
         </div>
+        {/* PROJECT */}
         <div className="project2-container">
           <div className="project1-img-container">
             <img className="img-title" src={img2} alt="" />
@@ -37,14 +39,18 @@ function Portfolio() {
             </div>
           </div>
         </div>
+        {/* PROJECT */}
         <div className="project3-container">
           <div className="project1-img-container">
             <img className="img-title" src="" alt="" />
           </div>
           <div className="project-content-container">
-            <a href="#">Coming soon</a>
+            <a href="https://lucent-malabi-5a0f9f.netlify.app/" target="_blank">
+              Cloud.com
+            </a>
           </div>
         </div>
+        {/* PROJECT */}
         <div className="project4-container">
           <div className="project1-img-container">
             <img className="img-title" src="" alt="" />
@@ -53,6 +59,7 @@ function Portfolio() {
             <a href="#">Coming soon</a>
           </div>
         </div>
+        {/* PROJECT */}
         <div className="project5-container">
           <div className="project1-img-container">
             <img className="img-title" src="" alt="" />
@@ -61,6 +68,7 @@ function Portfolio() {
             <a href="#">Coming soon</a>
           </div>
         </div>
+        {/* PROJECT */}
         <div className="project6-container">
           <div className="project1-img-container">
             <img className="img-title" src="" alt="" />

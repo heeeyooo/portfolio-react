@@ -1,18 +1,50 @@
-.style-to-top-btn {
-  display: none;
-  position: fixed;
-  width: 50px;
+#progress {
+  font-family: inherit;
+  font-weight: 300;
   height: 50px;
+  width: 50px;
+  background: var(--main-background);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
   right: 30px;
-  z-index: 99;
-  border: none;
-  background: rgba(200, 200, 200, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: black;
+  display: none;
+  place-items: center;
+  color: var(--text-color);
+  padding: 0;
+  border: none;
+  z-index: 99;
   cursor: pointer;
+}
+
+#progress-value {
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  background-color: transparent;
   border-radius: 50%;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+}
+
+#arrow-up {
+  position: absolute;
+  opacity: 1;
+}
+
+@keyframes opacUp {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacDown {
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes toTopButton {

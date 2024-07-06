@@ -8,14 +8,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #fff;
   z-index: 9999;
 }
 
 .exit-menu-button {
   position: fixed;
   top: 100px;
-  color: #000;
+  color: var(--text-color);
   border: none;
   background: transparent;
   cursor: pointer;
@@ -34,6 +33,7 @@
     transform: translateY(0);
   }
 }
+
 .link-menu-container {
   height: 30%;
   display: flex;
@@ -43,60 +43,38 @@
   font-size: 30px;
 }
 
-.link1 {
-  position: relative;
+.link-menu-container a {
+  color: var(--link-color);
+  text-decoration: none;
   opacity: 0;
-  animation: underlineWidth 1s 0.1s forwards;
+  transition: color 0.2s;
+}
+
+.link-menu-container a:hover {
+  color: var(--text-color);
+}
+
+.link1 {
+  animation: revealLink 1s 0.1s forwards;
 }
 
 .link2 {
-  position: relative;
-  opacity: 0;
-  animation: underlineWidth 1s 0.2s forwards;
+  animation: revealLink 1s 0.2s forwards;
 }
 
 .link3 {
-  position: relative;
-  opacity: 0;
-  animation: underlineWidth 1s 0.3s forwards;
+  animation: revealLink 1s 0.3s forwards;
 }
 
 .link4 {
-  position: relative;
-  opacity: 0;
-  animation: underlineWidth 1s 0.4s forwards;
+  animation: revealLink 1s 0.4s forwards;
 }
 
 .link5 {
-  position: relative;
-  opacity: 0;
-  animation: underlineWidth 1s 0.5s forwards;
+  animation: revealLink 1s 0.5s forwards;
 }
 
-.link1::after,
-.link2::after,
-.link3::after,
-.link4::after,
-.link5::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  background: black;
-  transition: width 0.3s;
-}
-
-.link1:hover::after,
-.link2:hover::after,
-.link3:hover::after,
-.link4:hover::after,
-.link5:hover::after {
-  width: 100%;
-}
-
-@keyframes underlineWidth {
+@keyframes revealLink {
   from {
     opacity: 0;
   }
@@ -104,6 +82,11 @@
     opacity: 1;
   }
 }
+
+.active-link {
+  color: var(--text-color) !important;
+}
+
 .menu-socials-icons {
   display: flex;
   align-items: center;
@@ -124,4 +107,13 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.menu-socials-icons a {
+  color: var(--link-color);
+  transition: color 0.2s;
+}
+
+.menu-socials-icons a:hover {
+  color: var(--text-color);
 }
