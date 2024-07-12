@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import "./MobileMenu.css";
 import Resume from "./../../pdf/heeeyooo-resume.pdf";
 
@@ -81,34 +82,62 @@ function MobileMenu() {
           <i className="fa-solid fa-xmark"></i>
         </button>
         <div className="link-menu-container">
-          <a
+          <Link
+            onClick={closeMenu}
+            className="link1 js-text menu-link1 active-link"
+            to="/"
+          >
+            Home
+          </Link>
+          {/* <a
             onClick={closeMenu}
             className="link1 js-text menu-link1 active-link"
             href="#section1"
           >
             Home
-          </a>
-          <a
+          </a> */}
+          <Link
+            onClick={closeMenu}
+            className="link2 js-text menu-link2"
+            to="/skills"
+          >
+            Skills
+          </Link>
+          {/* <a
             onClick={closeMenu}
             className="link2 js-text menu-link2"
             href="#section2"
           >
             Skills
-          </a>
-          <a
+          </a> */}
+          <Link
+            onClick={closeMenu}
+            className="link3 js-text menu-link3"
+            to="/portfolio"
+          >
+            Projects
+          </Link>
+          {/* <a
             onClick={closeMenu}
             className="link3 js-text menu-link3"
             href="#section3"
           >
             Projects
-          </a>
-          <a
+          </a> */}
+          <Link
+            onClick={closeMenu}
+            className="link4 js-text menu-link4"
+            to="/contact"
+          >
+            Contact me
+          </Link>
+          {/* <a
             onClick={closeMenu}
             className="link4 js-text menu-link4"
             href="#section4"
           >
             Contact me
-          </a>
+          </a> */}
           <a className="link5 js-text" href={Resume} target="_blank">
             Resume
           </a>

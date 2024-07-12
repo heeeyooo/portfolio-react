@@ -53,12 +53,14 @@ function Footer() {
   const BLACK = {
     color: "#000",
     linkColor: "rgba(0, 0, 0, 0.5)",
+    projectBackground: "rgba(255, 255, 255, 0.5)",
     icon: logo,
   };
 
   const WHITE = {
     color: "#fff",
     linkColor: "rgba(255, 255, 255, 0.5)",
+    projectBackground: "rgba(0, 0, 0, 0.5)",
     icon: logoWhite,
   };
 
@@ -70,6 +72,7 @@ function Footer() {
     });
     styles.style.setProperty("--text-color", props.color);
     styles.style.setProperty("--link-color", props.linkColor);
+    styles.style.setProperty("--project-background", props.projectBackground);
   }
 
   return (

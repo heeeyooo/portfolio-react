@@ -51,7 +51,7 @@ function ToTopBtn() {
   return (
     <>
       <button id="progress" onClick={topFunction}>
-        <i id="arrow-up" class="fa-solid fa-arrow-up"></i>
+        <i id="arrow-up" className="fa-solid fa-arrow-up"></i>
         <span id="progress-value"></span>
       </button>
     </>

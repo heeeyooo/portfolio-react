@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import MobileMenu from "../mobileMenu/MobileMenu";
 import "./Header.css";
 import logo from "./../../img/Logo-black.svg";
@@ -31,6 +32,20 @@ function Header() {
   //       "0 8px 15px rgba(0, 0, 0, 0.1)";
   //   }
   // });
+
+  addEventListener("scroll", () => {
+    if (window.scrollY < 50) {
+      document.getElementById("js-scroll").style.background = "none";
+      document.getElementById("js-scroll").style.boxShadow = "none";
+      document.getElementById("js-scroll").style.transform = "translateY(8px)";
+    } else {
+      document.getElementById("js-scroll").style.background =
+        "var(--main-background)";
+      document.getElementById("js-scroll").style.boxShadow =
+        "0 8px 15px rgba(0, 0, 0, 0.1)";
+      document.getElementById("js-scroll").style.transform = "translateY(0px)";
+    }
+  });
 
   addEventListener("scroll", () => {
     const links1 = document.querySelectorAll(".head-link1");
@@ -105,27 +120,42 @@ function Header() {
         <nav className="nav">
           <ul>
             <li>
-              <a
+              <Link className="link1 js-text head-link1 active-link" to="/">
+                Home
+              </Link>
+              {/* <a
                 className="link1 js-text head-link1 active-link"
                 href="#section1"
               >
                 Home
-              </a>
+              </a> */}
             </li>
             <li>
-              <a className="link2 js-text head-link2" href="#section2">
+              <Link className="link2 js-text head-link2" to="/skills">
                 Skills
-              </a>
+              </Link>
+
+              {/* <a className="link2 js-text head-link2" href="#section2">
+                Skills
+              </a> */}
             </li>
             <li>
-              <a className="link3 js-text head-link3" href="#section3">
+              <Link className="link3 js-text head-link3" to="/portfolio">
                 Projects
-              </a>
+              </Link>
+
+              {/* <a className="link3 js-text head-link3" href="#section3">
+                Projects
+              </a> */}
             </li>
             <li>
-              <a className="link4 js-text head-link4" href="#section4">
+              <Link className="link4 js-text head-link4" to="/contact">
                 Contact me
-              </a>
+              </Link>
+
+              {/* <a className="link4 js-text head-link4" href="#section4">
+                Contact me
+              </a> */}
             </li>
             <li>
               <a className="link5 js-text" href={Resume} target="_blank">
@@ -134,6 +164,7 @@ function Header() {
             </li>
           </ul>
         </nav>
+        {/* <Outlet /> */}
       </header>
     </>
   );

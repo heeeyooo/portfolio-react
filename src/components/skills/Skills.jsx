@@ -164,7 +164,7 @@ function Skills() {
         <div className="icon-container">
           <div className="skills-progress-container" id="myBar1"></div>
           <i
-            onClick={() => move1(100, "tomato")}
+            onClick={() => move1(96, "tomato")}
             className="fa-brands fa-html5 skills-icon"
           ></i>
           <p className="skills-progress-percent" id="demo1"></p>

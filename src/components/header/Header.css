@@ -7,14 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--main-background);
+  background: transparent;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 0 25px;
   z-index: 60;
   transition: all 0.3s;
+  transform: translateY(8px);
   border-radius: 50px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .logo-header {

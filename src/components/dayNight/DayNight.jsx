@@ -21,6 +21,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 1:
         document.body.classList.add("h1");
@@ -30,6 +31,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 2:
         document.body.classList.add("h2");
@@ -39,6 +41,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 3:
         document.body.classList.add("h3");
@@ -48,6 +51,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 4:
         document.body.classList.add("h4");
@@ -57,6 +61,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 5:
         document.body.classList.add("h5");
@@ -66,6 +71,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 6:
         document.body.classList.add("h6");
@@ -75,6 +81,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 7:
         document.body.classList.add("h7");
@@ -84,6 +91,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 8:
         document.body.classList.add("h8");
@@ -93,26 +101,23 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 9:
         document.body.classList.add("h9");
         menuBack.classList.add("h9");
-
         break;
       case 10:
         document.body.classList.add("h10");
         menuBack.classList.add("h10");
-
         break;
       case 11:
         document.body.classList.add("h11");
         menuBack.classList.add("h11");
-
         break;
       case 12:
         document.body.classList.add("h12");
         menuBack.classList.add("h12");
-
         break;
       case 13:
         document.body.classList.add("h13");
@@ -121,22 +126,18 @@ function DayNight() {
       case 14:
         document.body.classList.add("h14");
         menuBack.classList.add("h14");
-
         break;
       case 15:
         document.body.classList.add("h15");
         menuBack.classList.add("h15");
-
         break;
       case 16:
         document.body.classList.add("h16");
         menuBack.classList.add("h16");
-
         break;
       case 17:
         document.body.classList.add("h17");
         menuBack.classList.add("h17");
-
         break;
       case 18:
         document.body.classList.add("h18");
@@ -146,6 +147,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 19:
         document.body.classList.add("h19");
@@ -155,6 +157,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 20:
         document.body.classList.add("h20");
@@ -164,6 +167,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 21:
         document.body.classList.add("h21");
@@ -173,6 +177,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 22:
         document.body.classList.add("h22");
@@ -182,6 +187,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
         break;
       case 23:
         document.body.classList.add("h23");
@@ -191,6 +197,7 @@ function DayNight() {
         });
         styles.style.setProperty("--text-color", "#fff");
         styles.style.setProperty("--link-color", "rgba(255, 255, 255, 0.5)");
+        styles.style.setProperty("--project-background", "rgba(0, 0, 0, 0.5)");
     }
   }
 
