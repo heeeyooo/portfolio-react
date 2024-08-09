@@ -77,8 +77,8 @@ function Footer() {
 
   return (
     <footer className="footer js-footer">
-      <a className="link-logo-footer" href="index.html">
-        <img className="logo-footer js-logo" src={logo} alt="" />
+      <a className="link-logo-footer" href="#section1">
+        <img className="logo-footer js-logo" src={logo} alt="heeeyooo" />
       </a>
       <q className="main-quote">
         Time is the most precious asset in this world, use it
@@ -352,7 +352,9 @@ function Footer() {
           <i className="fa-brands fa-linkedin"></i>
         </a>
       </div>
-      <p className="copyright">© Stepan Dordiai 2024</p>
+      <p className="copyright">
+        © heeeyooo | Stepan Dordiai {new Date().getFullYear()}
+      </p>
     </footer>
   );
 }

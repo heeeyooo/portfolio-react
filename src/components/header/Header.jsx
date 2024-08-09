@@ -1,172 +1,167 @@
-import { Outlet, Link } from "react-router-dom";
-import MobileMenu from "../mobileMenu/MobileMenu";
 import "./Header.css";
 import logo from "./../../img/Logo-black.svg";
 import Resume from "./../../pdf/heeeyooo-resume.pdf";
+import BurgerBtn from "./../burgerBtn/BurgerBtn";
 
 function Header() {
-  const openBtn = () => {
-    let mobileMenu = document.getElementById("mobile-menu");
-    mobileMenu.style.display = "flex";
-    document.body.style.overflowY = "hidden";
-  };
+  addEventListener("scroll", () => {
+    document
+      .querySelector(".burger-button")
+      .classList.remove("active-burger-button");
+    document.querySelector(".header").classList.remove("active-header");
+    document.querySelector(".header-nav").classList.remove("active-header-nav");
+    document
+      .querySelector(".header-socials")
+      .classList.remove("active-header-socials");
+    if (window.scrollY > 100) {
+      document.querySelector(".header").classList.add("header-scroll");
+    } else {
+      document.querySelector(".header").classList.remove("header-scroll");
+    }
+  });
 
-  // let prevScrollpos = window.pageYOffset;
-  // window.onscroll = function () {
-  //   let currentScrollPos = window.pageYOffset;
-  //   if (prevScrollpos > currentScrollPos) {
-  //     document.getElementById("js-scroll").style.top = "0";
-  //     document.getElementById("js-scroll").style.boxShadow =
-  //       "0 8px 15px rgba(0, 0, 0, 0.1)";
-  //   } else {
-  //     document.getElementById("js-scroll").style.top = "-100px";
-  //     document.getElementById("js-scroll").style.boxShadow = "none";
-  //   }
-  //   prevScrollpos = currentScrollPos;
-  // };
-
-  // addEventListener("scroll", () => {
-  //   if (window.pageYOffset <= 0 || window.pageYOffset <= 100) {
-  //     document.getElementById("js-scroll").style.top = "0";
-  //     document.getElementById("js-scroll").style.boxShadow =
-  //       "0 8px 15px rgba(0, 0, 0, 0.1)";
-  //   }
-  // });
+  let lastScrollTop = 0;
 
   addEventListener("scroll", () => {
-    if (window.scrollY < 50) {
-      document.getElementById("js-scroll").style.background = "none";
-      document.getElementById("js-scroll").style.boxShadow = "none";
-      document.getElementById("js-scroll").style.transform = "translateY(8px)";
+    let header = document.querySelector(".header");
+
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      header.style.transform = "translateY(-120px)";
     } else {
-      document.getElementById("js-scroll").style.background =
-        "var(--main-background)";
-      document.getElementById("js-scroll").style.boxShadow =
-        "0 8px 15px rgba(0, 0, 0, 0.1)";
-      document.getElementById("js-scroll").style.transform = "translateY(0px)";
+      header.style.transform = "translateY(0px)";
+    }
+    lastScrollTop = scrollTop;
+  });
+
+  // SOLUTION FOR HEADER ON MOBILE
+  addEventListener("scroll", () => {
+    let header = document.querySelector(".header");
+
+    if (window.pageYOffset <= 0 || window.pageYOffset <= 500) {
+      header.style.transform = "translateY(0px)";
     }
   });
 
   addEventListener("scroll", () => {
-    const links1 = document.querySelectorAll(".head-link1");
-    const links2 = document.querySelectorAll(".head-link2");
-    const links3 = document.querySelectorAll(".head-link3");
-    const links4 = document.querySelectorAll(".head-link4");
+    const linkHome = document.querySelector(".header-link-home");
+    const linkSkills = document.querySelector(".header-link-skills");
+    const linkProjects = document.querySelector(".header-link-projects");
+    const linkContactMe = document.querySelector(".header-link-contact-me");
 
     if (window.scrollY < 700) {
-      links1.forEach((link) => {
-        link.classList.add("active-link");
-      });
-      links2.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-      links3.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-    } else if (window.scrollY < 1900) {
-      links1.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-      links2.forEach((link) => {
-        link.classList.add("active-link");
-      });
-      links3.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-    } else if (window.scrollY < 3000) {
-      links3.forEach((link) => {
-        link.classList.add("active-link");
-      });
-      links2.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-
-      links4.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-      links1.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-    } else if (window.scrollY > 3000) {
-      links4.forEach((link) => {
-        link.classList.add("active-link");
-      });
-      links2.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-      links3.forEach((link) => {
-        link.classList.remove("active-link");
-      });
-      links1.forEach((link) => {
-        link.classList.remove("active-link");
-      });
+      linkHome.classList.add("active-link");
+      linkSkills.classList.remove("active-link");
+      linkProjects.classList.remove("active-link");
+      linkContactMe.classList.remove("active-link");
+    } else if (window.scrollY < 1500) {
+      linkHome.classList.remove("active-link");
+      linkSkills.classList.add("active-link");
+      linkProjects.classList.remove("active-link");
+      linkContactMe.classList.remove("active-link");
+    } else if (window.scrollY < 2600) {
+      linkHome.classList.remove("active-link");
+      linkSkills.classList.remove("active-link");
+      linkProjects.classList.add("active-link");
+      linkContactMe.classList.remove("active-link");
+    } else if (window.scrollY > 2600) {
+      linkHome.classList.remove("active-link");
+      linkSkills.classList.remove("active-link");
+      linkProjects.classList.remove("active-link");
+      linkContactMe.classList.add("active-link");
     }
   });
 
   return (
-    <>
-      <MobileMenu />
-      <header id="js-scroll" className="header">
-        <a href="index.html">
-          <img className="logo-header js-logo" src={logo} alt="heeeyooo" />
+    <header className="header">
+      <div className="logo-btn-container">
+        <a href="#section1">
+          <img className="header-logo js-logo" src={logo} alt="heeeyooo" />
         </a>
-        <button
-          onClick={openBtn}
-          id="openBtn"
-          className="burger-button icon-color"
+        <BurgerBtn />
+      </div>
+      <ul className="header-nav">
+        <li>
+          <a className="header-link-home active-link" href="#section1">
+            Home
+          </a>
+        </li>
+        <li>
+          <a className="header-link-skills" href="#section2">
+            Skills
+          </a>
+        </li>
+        <li>
+          <a className="header-link-projects" href="#section3">
+            Projects
+          </a>
+        </li>
+        <li>
+          <a className="header-link-contact-me" href="#section4">
+            Contact me
+          </a>
+        </li>
+        <li>
+          <div className="resume-container">
+            <a className="header-link-resume" href={Resume} target="_blank">
+              Resume
+            </a>
+            <a
+              className="header-link-resume-download"
+              href={Resume}
+              target="_blank"
+              download={true}
+            >
+              <i className="fa-solid fa-download"></i>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <div className="header-socials">
+        <a
+          className="icon-color"
+          href="https://github.com/heeeyooo"
+          target="_blank"
         >
-          <i className="fa-solid fa-bars"></i>
-        </button>
-        <nav className="nav">
-          <ul>
-            <li>
-              <Link className="link1 js-text head-link1 active-link" to="/">
-                Home
-              </Link>
-              {/* <a
-                className="link1 js-text head-link1 active-link"
-                href="#section1"
-              >
-                Home
-              </a> */}
-            </li>
-            <li>
-              <Link className="link2 js-text head-link2" to="/skills">
-                Skills
-              </Link>
-
-              {/* <a className="link2 js-text head-link2" href="#section2">
-                Skills
-              </a> */}
-            </li>
-            <li>
-              <Link className="link3 js-text head-link3" to="/portfolio">
-                Projects
-              </Link>
-
-              {/* <a className="link3 js-text head-link3" href="#section3">
-                Projects
-              </a> */}
-            </li>
-            <li>
-              <Link className="link4 js-text head-link4" to="/contact">
-                Contact me
-              </Link>
-
-              {/* <a className="link4 js-text head-link4" href="#section4">
-                Contact me
-              </a> */}
-            </li>
-            <li>
-              <a className="link5 js-text" href={Resume} target="_blank">
-                Resume
-              </a>
-            </li>
-          </ul>
-        </nav>
-        {/* <Outlet /> */}
-      </header>
-    </>
+          <i className="fa-brands fa-github"></i>
+        </a>
+        <a
+          className="icon-color"
+          href="https://www.instagram.com/heeeyooo_?igsh=N2ZreTdicmF1dDlk&utm_source=qr"
+          target="_blank"
+        >
+          <i className="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          className="icon-color"
+          href="https://www.facebook.com/stepan.dordyay.5"
+          target="_blank"
+        >
+          <i className="fa-brands fa-facebook"></i>
+        </a>
+        <a
+          className="icon-color"
+          href="https://twitter.com/Heeeyooo_"
+          target="_blank"
+        >
+          <i className="fa-brands fa-x-twitter"></i>
+        </a>
+        <a
+          className="icon-color"
+          href="https://www.twitch.tv/heeeyooo_"
+          target="_blank"
+        >
+          <i className="fa-brands fa-twitch"></i>
+        </a>
+        <a
+          className="icon-color"
+          href="https://www.linkedin.com/in/stepan-dordiai-245715310"
+          target="_blank"
+        >
+          <i className="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </header>
   );
 }
 

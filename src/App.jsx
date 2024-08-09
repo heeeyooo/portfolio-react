@@ -1,31 +1,27 @@
 import Header from "./components/header/Header";
-import About from "./components/about/About";
-import Skills from "./components/skills/Skills";
-import Portfolio from "./components/portfolio/Portfolio";
+import About from "./pages/about/About";
+import Skills from "./pages/skills/Skills";
+import Portfolio from "./pages/portfolio/Portfolio";
 import Projects from "./components/projects/Projects";
-import Contact from "./components/contact/Contact";
+import Contact from "./pages/contact/Contact";
 import ToTopBtn from "./components/toTopBtn/ToTopBtn";
 import Footer from "./components/footer/Footer";
 import DayNight from "./components/dayNight/DayNight";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Loading from "./components/loading/Loading";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="skills" element={<Skills />} />
-          <Route path="portfolio" element={<Portfolio />} />
-          <Route path="contact" element={<Contact />} />
-          {/* <Projects /> */}
-        </Routes>
-        <Footer />
-        <ToTopBtn />
-        <DayNight />
-      </BrowserRouter>
+      <Loading />
+      <Header />
+      <About />
+      <Skills />
+      <Portfolio />
+      <Contact />
+      <Footer />
+      <ToTopBtn />
+      <DayNight />
     </>
   );
 }

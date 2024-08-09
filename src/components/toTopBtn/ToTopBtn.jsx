@@ -16,13 +16,11 @@ function ToTopBtn() {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
     let scrollValue = Math.round((pos * 100) / calcHeight);
-    // console.log(scrollValue);
-    // myBtn.style.background = `conic-gradient(rgba(255, 255, 255, 0.5) ${scrollValue}%, var(--main-background) ${scrollValue}%)`;
     progressValue.textContent = scrollValue + "%";
     progressValue.style.animation = "opacUp forwards";
     arrowUp.style.animation = "opacDown forwards";
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-      myBtn.style.display = "grid";
+      myBtn.style.display = "flex";
       myBtn.style.animation = "toTopButton 0.3s forwards";
     } else {
       myBtn.style.animation = "toDownButton 0.3s forwards";

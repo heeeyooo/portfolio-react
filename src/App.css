@@ -8,6 +8,9 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  /* DISABLE SCROLL WHEN LOADING */
+  position: fixed;
+  overflow-y: hidden;
 }
 
 #root {
@@ -18,9 +21,16 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background: transparent;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }

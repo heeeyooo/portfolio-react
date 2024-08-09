@@ -1,6 +1,6 @@
 import "./Project.css";
-import img1 from "./../portfolio/img/gym-site.jpg";
-import img2 from "./../portfolio/img/gallery.png";
+import img1 from "./../../pages/portfolio/img/gym-site.jpg";
+import img2 from "./../../pages/portfolio/img/gallery.png";
 
 function Project() {
   const DATA = [
